@@ -78,11 +78,11 @@ app.ui.favourite.FavouriteView.prototype.onAfterRender = function() {
 };
 */
 app.ui.favourite.FavouriteView.prototype.onLoaded = function() {
-    if (!this.rendered || !this.models.FavouriteModel) return;
+    if (!this.rendered || !this.model.FavouriteModel) return;
 
     //this.p2rComponent.reset();
 
-    this.movieComponents = this.models.FavouriteModel.map(function(movie) {
+    this.movieComponents = this.model.FavouriteModel.map(function(movie) {
         return new app.ui.shows.ListItem(movie);
     }, this);
 

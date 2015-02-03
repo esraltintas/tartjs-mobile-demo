@@ -25,25 +25,25 @@ goog.require('goog.events.EventTarget');
  * @extends {goog.events.EventTarget}
  */
 app.models.FavouriteModel = function() {
+    this.favouriteShows = [];
     goog.base(this);
 };
 goog.inherits(app.models.FavouriteModel, goog.events.EventTarget);
 goog.addSingletonGetter(app.models.FavouriteModel);
 
+
 app.models.FavouriteModel.prototype.getfavouriteshowById = function(id) {
-    return goog.array.find(this.favouriteshows, function(favouriteshow) {
+    return goog.array.find(this.favouriteShows, function(favouriteshow) {
         return favouriteshow['_id'] == id;
 
     });
 };
 
 
-
-
-app.models.FavouriteModel.prototype.fetch = function(cb) {
-   /* tart.xhr('static/data/favouriteshows.json', function(err, data) {
-        this.favouriteshows = data.slice(0, 20);
-        cb(this.favouriteshows);
-    }, this);*/
-    this.favouriteshows = data.slice(0, 20);
+app.models.FavouriteModel.prototype.getFavouriteShows = function() {
+        return this.favouriteShows;
 };
+
+app.models.FavouriteModel.prototype.addShow = function(id) {
+    this.favouriteShows.push(id);
+}
