@@ -6,17 +6,18 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, width=device-width" />
-        <stylesheets/>
+        <link rel="stylesheet" type="text/css" href="static/fonts/icons.css" /><link rel="stylesheet" type="text/css" href="ui/about/style.css" /><link rel="stylesheet" type="text/css" href="ui/favourite/style.css" /><link rel="stylesheet" type="text/css" href="ui/layout/infinite-scroll.css" /><link rel="stylesheet" type="text/css" href="ui/layout/layout.css" /><link rel="stylesheet" type="text/css" href="ui/layout/pull-to-refresh.css" /><link rel="stylesheet" type="text/css" href="ui/layout/reset.css" /><link rel="stylesheet" type="text/css" href="ui/navbar/navBar.css" /><link rel="stylesheet" type="text/css" href="ui/shows/shows.css" /><link rel="stylesheet" type="text/css" href="ui/sidebar/sidebar.css" /><link rel="stylesheet" type="text/css" href="ui/tabbar/tabbar.css" />
         <title>Top TV Shows</title>
     </head>
     <body>
         <script type="text/javascript">
             cfg = {};
-            <environment/>
-            <directives/>
-            <version/>
+            cfg.ENV = 'web';
+
+             
+            cfg['VERSION'] = '0.0.2';
         </script>
-        <scripts/>
+        <script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="library/tartJS/third_party/goog/goog/base.js"></script><script type="text/javascript" src="deps.js"></script><script type="text/javascript" src="Bootstrapper.js"></script>
         <script type="text/javascript">
             var onDeviceReady = function() {
                 new app.Bootstrapper();
