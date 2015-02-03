@@ -50,7 +50,7 @@ app.ui.shows.DetailView.prototype.templates_base = function() {
 
 app.ui.shows.DetailView.prototype.onFavTap = function(e) {
     app.models.FavouriteModel.getInstance().addShow(this.id);
-    console.log(app.models.FavouriteModel.getInstance().favouriteshows);
+    console.log(app.models.FavouriteModel.getInstance().getFavouriteShows());
 };
 
 

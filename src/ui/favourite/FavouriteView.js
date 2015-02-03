@@ -45,7 +45,7 @@ app.ui.favourite.FavouriteView.prototype.templates_content = function() {
         '<view class="list-view" id="' + this.id + '" style="-webkit-transform: translate3d(100%, 0, ' +
         this.index + 'px)">' +
         '<fav-items></fav-items>' +
-        '</view>';
+        '</view>' +'<guncelle>Güncelle</guncelle>';
 };
 
 app.ui.favourite.FavouriteView.prototype.bindModelEvents = function() {
