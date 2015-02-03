@@ -12,26 +12,41 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-goog.provide('app.Application');
-goog.require('app.locale.en');
-goog.require('app.locale.tr');
-goog.require('app.ui.MainView');
-goog.require('app.ui.SidebarComponent');
+goog.provide('app.ui.about.View');
+goog.require('tart.ui.View');
 
 
 
 /**
- * The main application class.
  *
  * @constructor
+ * @extends {tart.ui.View}
  */
-app.Application = function() {
-    app.vm = new tart.ui.ViewManager();
-
-    app.sidebar = new app.ui.SidebarComponent();
-    app.sidebar.render(document.body);
-    var mainView = new app.ui.MainView();
-
-    app.vm.setCurrentView(mainView);
+app.ui.about.View = function() {
+    goog.base(this);
 };
-goog.addSingletonGetter(app.Application);
+goog.inherits(app.ui.about.View, tart.ui.View);
+
+
+/**
+ * @override
+ */
+app.ui.about.View.prototype.className = 'about-view';
+
+
+/**
+ * @override
+ */
+app.ui.about.View.prototype.templates_content = function() {
+    return '<h1>' + __('Top TV Show Posters') + '</h1>' +
+        '<p>' + __('A tartJS mobile app demo') + '</p>';
+};
+
+
+/**
+ * @override
+ */
+app.ui.about.View.prototype.activate = function() {
+    if (cfg.ENV == 'device')
+        StatusBar.styleDefault();
+};

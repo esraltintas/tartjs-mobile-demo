@@ -12,26 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-goog.provide('app.Application');
-goog.require('app.locale.en');
-goog.require('app.locale.tr');
-goog.require('app.ui.MainView');
-goog.require('app.ui.SidebarComponent');
+goog.provide('app.locale.tr');
+goog.require('tart.locale');
 
 
 
-/**
- * The main application class.
- *
- * @constructor
- */
-app.Application = function() {
-    app.vm = new tart.ui.ViewManager();
-
-    app.sidebar = new app.ui.SidebarComponent();
-    app.sidebar.render(document.body);
-    var mainView = new app.ui.MainView();
-
-    app.vm.setCurrentView(mainView);
+tart.locale['tr'] = {
+    '_name': 'Türkçe',
+    'About': 'Hakkında',
+    'Shows': 'Diziler',
+    'Favorites': 'Favoriler',
+    'Great posters for the best shows': 'En iyi dizi posterleri',
+    'End of List': 'Başka dizi kalmadı :(',
+    'Top TV Show Posters': 'En iyi dizi posterleri',
+    'A tartJS mobile app demo': 'Bir tartJS mobil uygulama demosu',
+    'Top Shows': 'En İyi Diziler',
+    'Favourite':'Favori',
+    'Favourites': 'Favoriler',
+    // Dummy entry is easier than getting rid of comma after last real one.
+    '': ''
 };
-goog.addSingletonGetter(app.Application);

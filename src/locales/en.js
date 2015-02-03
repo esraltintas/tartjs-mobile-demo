@@ -12,26 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-goog.provide('app.Application');
-goog.require('app.locale.en');
-goog.require('app.locale.tr');
-goog.require('app.ui.MainView');
-goog.require('app.ui.SidebarComponent');
+goog.provide('app.locale.en');
+goog.require('tart.locale');
 
 
 
-/**
- * The main application class.
- *
- * @constructor
- */
-app.Application = function() {
-    app.vm = new tart.ui.ViewManager();
+tart.locale['en'] = {
+    '_name': 'English',
 
-    app.sidebar = new app.ui.SidebarComponent();
-    app.sidebar.render(document.body);
-    var mainView = new app.ui.MainView();
-
-    app.vm.setCurrentView(mainView);
+    // Dummy entry is easier than getting rid of comma after last real one.
+    '': ''
 };
-goog.addSingletonGetter(app.Application);
