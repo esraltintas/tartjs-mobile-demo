@@ -41,11 +41,11 @@ goog.inherits(app.ui.favourite.FavouriteView, tart.ui.View);
  * @override
  */
 app.ui.favourite.FavouriteView.prototype.templates_content = function() {
-    return '<h6>Favoriler</h6>' +
+    return '<h5>Favoriler</h5>' +
         '<view class="list-view" id="' + this.id + '" style="-webkit-transform: translate3d(100%, 0, ' +
         this.index + 'px)">' +
         '<fav-items></fav-items>' +
-        '</view>' +'<guncelle>Güncelle</guncelle>';
+        '</view>' +'<guncelle class = "guncelle" >Güncelle</guncelle>';
 };
 
 app.ui.favourite.FavouriteView.prototype.bindModelEvents = function() {
