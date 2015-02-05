@@ -41,12 +41,12 @@ goog.inherits(app.ui.favourite.FavouriteView, tart.ui.View);
  * @override
  */
 app.ui.favourite.FavouriteView.prototype.templates_content = function() {
-    return '<h5>Favoriler</h5>' +
-        '<view class="list-view" id="' + this.id + '" style="-webkit-transform: translate3d(100%, 0, ' +
+    return '<view class="list-view" id="' + this.id + '" style="-webkit-transform: translate3d(100%, 0, ' +
         this.index + 'px)">' +
         '<fav-items></fav-items>' +
-        '</view>' +'<guncelle class = "guncelle" >Güncelle</guncelle>'+
-        '<rem-fav class = "rem-fav">Çıkar</rem-fav>';
+        '</view>'+
+    '<guncelle class = "guncelle" >Güncelle</guncelle>'+
+    '<rem-fav class = "rem-fav">Çıkar</rem-fav>';
 };
 
 app.ui.favourite.FavouriteView.prototype.bindModelEvents = function() {
@@ -118,15 +118,22 @@ app.ui.favourite.FavouriteView.prototype.onLoadedMore = function(e) {
 };
 
 
+app.ui.favourite.FavouriteView.prototype.updateFavTap = function(e) {
+    app.models.FavouriteModel.getInstance().getFavouriteShows();
+    console.log(app.models.FavouriteModel.getInstance().getFavouriteShows());
+};
 
 
-app.ui.favourite.FavouriteView.prototype.RemoveFavTap = function(e) {
+
+
+app.ui.favourite.FavouriteView.prototype.removeFavTap = function(e) {
     app.models.FavouriteModel.getInstance().remShow(this.id);
 };
 
 
 app.ui.favourite.FavouriteView.prototype.events = {
     'tap': {
-        'rem-fav': app.ui.favourite.FavouriteView.prototype.RemoveFavTap
+        'rem-fav': app.ui.favourite.FavouriteView.prototype.removeFavTap,
+        'guncelle': app.ui.favourite.FavouriteView.prototype.updateFavTap
     }
 };
