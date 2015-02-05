@@ -45,7 +45,8 @@ app.ui.favourite.FavouriteView.prototype.templates_content = function() {
         '<view class="list-view" id="' + this.id + '" style="-webkit-transform: translate3d(100%, 0, ' +
         this.index + 'px)">' +
         '<fav-items></fav-items>' +
-        '</view>' +'<guncelle class = "guncelle" >Güncelle</guncelle>';
+        '</view>' +'<guncelle class = "guncelle" >Güncelle</guncelle>'+
+        '<rem-fav class = "rem-fav"></rem-fav>';
 };
 
 app.ui.favourite.FavouriteView.prototype.bindModelEvents = function() {
@@ -120,12 +121,12 @@ app.ui.favourite.FavouriteView.prototype.onLoadedMore = function(e) {
 
 
 app.ui.favourite.FavouriteView.prototype.RemoveFavTap = function(e) {
-
+    app.models.FavouriteModel.getInstance().remShow(this.id);
 };
 
 
 app.ui.favourite.FavouriteView.prototype.events = {
     'tap': {
-        'list-item': app.ui.favourite.FavouriteView.prototype.RemoveFavTap
+        'rem-fav': app.ui.favourite.FavouriteView.prototype.RemoveFavTap
     }
 };

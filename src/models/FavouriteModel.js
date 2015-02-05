@@ -47,3 +47,8 @@ app.models.FavouriteModel.prototype.getFavouriteShows = function() {
 app.models.FavouriteModel.prototype.addShow = function(id) {
     this.favouriteShows.push(id);
 }
+
+app.models.FavouriteModel.prototype.remShow = function(id) {
+    var j=this.favouriteShows.indexOf(id);
+    this.favouriteShows.splice(j,1);
+}
