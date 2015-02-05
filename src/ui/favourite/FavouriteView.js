@@ -46,7 +46,7 @@ app.ui.favourite.FavouriteView.prototype.templates_content = function() {
         this.index + 'px)">' +
         '<fav-items></fav-items>' +
         '</view>' +'<guncelle class = "guncelle" >Güncelle</guncelle>'+
-        '<rem-fav class = "rem-fav"></rem-fav>';
+        '<rem-fav class = "rem-fav">Çıkar</rem-fav>';
 };
 
 app.ui.favourite.FavouriteView.prototype.bindModelEvents = function() {

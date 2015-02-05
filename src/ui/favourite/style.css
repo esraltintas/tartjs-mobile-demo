@@ -24,7 +24,7 @@
     line-height: 130px;
     position:absolute;
     top: 0px;
-    text-align:right;
+    text-align:left;
 }
 
 .rem-fav {
@@ -40,6 +40,6 @@
     line-height: 130px;
     position:absolute;
     top: 0px;
-    text-align:left;
+    text-align:right;
 }
 
