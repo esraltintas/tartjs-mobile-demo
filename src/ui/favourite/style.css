@@ -11,29 +11,45 @@
     line-height: 130px;
     padding-bottom: 40px;
 }
-.guncelle {
+
+fav-items {
     display: block;
+    top: 0px;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 90px;
+    width: 100%;
+    z-index: 0;
+}
+
+.iOS fav-items {
+    padding-top: 130px;
+}
+
+fav-item {
+    display: block;
+    width: 100%;
+    height: 360px;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+
+.guncelle {
+    position: absolute;
     font-size: 30px;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    margin-left: 0;
-    margin-right: 0;
     font-weight: bold;
     width: 25%;
     height: 100px;
     line-height: 100px;
-    position:absolute;
     top: 100px;
     color: #ffffff;
     background: black;
     text-align:center;
+    z-index: 1;
 }
 
 .rem-fav {
-    display: block;
+    position: absolute;
     font-size: 30px;
-    margin-top: 60px;
-    margin-bottom: 60px;
     float: right;
     font-weight: bold;
     width: 25%;
@@ -41,6 +57,7 @@
     line-height: 100px;
     right: 0;
     top: 100px;
+    z-index: 1;
     color: #ffffff;
     background: #000000;
     text-align:center;

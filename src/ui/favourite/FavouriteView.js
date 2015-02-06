@@ -43,10 +43,10 @@ goog.inherits(app.ui.favourite.FavouriteView, tart.ui.View);
 app.ui.favourite.FavouriteView.prototype.templates_content = function() {
     return '<view class="list-view" id="' + this.id + '" style="-webkit-transform: translate3d(100%, 0, ' +
         this.index + 'px)">' +
+        '<guncelle class = "guncelle" >Güncelle</guncelle>'+
+        '<rem-fav class = "rem-fav">Çıkar</rem-fav>'
         '<fav-items></fav-items>' +
-        '</view>'+
-    '<guncelle class = "guncelle" >Güncelle</guncelle>'+
-    '<rem-fav class = "rem-fav">Çıkar</rem-fav>';
+        '</view>' ;
 };
 
 app.ui.favourite.FavouriteView.prototype.bindModelEvents = function() {
