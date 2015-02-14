@@ -44,8 +44,8 @@ app.models.FavouriteModel.prototype.getFavouriteShows = function() {
         return this.favouriteShows;
 };
 
-app.models.FavouriteModel.prototype.addShow = function(id) {
-    this.favouriteShows.push(id);
+app.models.FavouriteModel.prototype.addShow = function(movie) {
+    this.favouriteShows.push(movie);
 }
 
 app.models.FavouriteModel.prototype.remShow = function(id) {

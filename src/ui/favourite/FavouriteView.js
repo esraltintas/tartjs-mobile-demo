@@ -41,12 +41,9 @@ goog.inherits(app.ui.favourite.FavouriteView, tart.ui.View);
  * @override
  */
 app.ui.favourite.FavouriteView.prototype.templates_content = function() {
-    return '<view class="list-view" id="' + this.id + '" style="-webkit-transform: translate3d(100%, 0, ' +
-        this.index + 'px)">' +
-        '<guncelle class = "guncelle" >Güncelle</guncelle>'+
-        '<rem-fav class = "rem-fav">Çıkar</rem-fav>'
-        '<fav-items></fav-items>' +
-        '</view>' ;
+    return  '<guncelle class = "guncelle" >Güncelle</guncelle>'+
+        '<rem-fav class = "rem-fav">Çıkar</rem-fav>'+
+    '<fav-items></fav-items>';
 };
 
 app.ui.favourite.FavouriteView.prototype.bindModelEvents = function() {
@@ -79,17 +76,20 @@ app.ui.favourite.FavouriteView.prototype.onAfterRender = function() {
 };
 */
 app.ui.favourite.FavouriteView.prototype.onLoaded = function() {
-    if (!this.rendered || !this.model.FavouriteModel) return;
+    if (!this.rendered || !app.models.FavouriteModel.getInstance().getFavouriteShows()) return;
 
     //this.p2rComponent.reset();
 
-    this.movieComponents = this.model.FavouriteModel.map(function(movie) {
+    this.movieComponents = app.models.FavouriteModel.getInstance().getFavouriteShows().map(function(movie) {
         return new app.ui.shows.ListItem(movie);
     }, this);
 
     var markup = this.movieComponents.map(function(cmp) {
         return cmp.templates_base();
     }).join('');
+
+    console.log(this.getElement());
+    console.log(app.models.FavouriteModel.getInstance().getFavouriteShows());
 
     this.getChild('fav-items')[0].innerHTML = markup;
     //this.infiniteScrollComponent.showSpinner();

@@ -49,7 +49,7 @@ app.ui.shows.DetailView.prototype.templates_base = function() {
 };
 
 app.ui.shows.DetailView.prototype.onFavTap = function(e) {
-    app.models.FavouriteModel.getInstance().addShow(this.id);
+    app.models.FavouriteModel.getInstance().addShow(this.movie);
     console.log(app.models.FavouriteModel.getInstance().getFavouriteShows());
 };
 

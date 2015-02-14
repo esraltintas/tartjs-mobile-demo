@@ -39,27 +39,7 @@ app.ui.favourite.FavouriteViewModel.prototype.getShowById = function(id) {
 };
 
 
-app.ui.favourite.FavouriteViewModel.prototype.loadFavouriteShows = function() {
-    favouriteshow = app.models.FavouriteModel.getInstance().this.favouriteShows;
-    favouriteshows = [].slice.call(favouriteshow);
-    goog.array.shuffle(favouriteshows);
-    this.favouriteshows = favouriteshows;
-    this.dispatchEvent(app.ui.favourite.FavouriteViewModel.EventType.LOADED);
 
-};
-
-app.ui.favourite.FavouriteViewModel.prototype.loadMore = function() {
-    app.models.FavouriteModel.getInstance().fetch(function(shows) {
-        favouriteshows = [].slice.call(favouriteshows, 10);
-        goog.array.shuffle(favouriteshows);
-
-        this.dispatchEvent({
-            type: app.ui.favourite.FavouriteViewModel.EventType.LOADED_MORE,
-            diff: favouriteshows,
-            endOfFeed: true
-        });
-    }.bind(this));
-};
 
 
 /**
